@@ -1,0 +1,36 @@
+.sec-titile{
+    color: tomato;
+    text-align: center;
+    margin: 20px auto;
+    text-transform: capitalize;
+    font-weight: bold;
+    
+}
+
+.sec-titile h1{
+    
+}
+
+.bm-br{
+    border-bottom: 3px solid black;
+    width: 300px;
+    margin: 10px auto;
+}
+
+.btn-submit{
+    text-align: center;
+    background-color: tomato;
+    border-radius: 0px;
+    padding: 5px 20px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-submit:hover{
+    background-color: black;
+}
+
+.blog-img{
+    margin-bottom: 20px;
+}

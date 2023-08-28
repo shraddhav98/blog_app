@@ -1,0 +1,130 @@
+<section>
+    <div class="container">
+        <div class="card shadow mb-5 rounded">
+            <h2>All Blogs</h2>
+            <p>You Can Add New Blog From Here!</p>
+            <div class="add-post">
+                
+                <button  routerLink="/addBlog">Add New Blog</button>
+            </div>
+        </div>
+        <div class="category-table">
+            <!-- <div class="section-title">
+                <h3>All Categories</h3>
+            </div> -->
+           <div class="table-responsive">
+            <table class="table">
+                <thead>
+                  <tr >
+                    <th scope="col">No</th>
+                    <th scope="col">Post Image</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Category</th>
+                    <!-- <th scope="col">Discription</th> -->
+                    <th scope="col">Action</th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <tr *ngFor="let obj of blog">
+                    <td scope="row">{{obj.blog_id}}</td>
+                    <td>{{obj.blog_author}}</td>
+                    <td>{{obj.blog_name}} </td>
+                    <td>{{obj.blog_date}}</td>
+                    <td>{{obj.blog_category}}</td>
+                    <!-- <td>{{obj.blog_disc}}</td> -->
+                    <td>
+                        <button type="submit" class="edit btn " routerLink="/updateBlog/{{obj._id}}">Edit</button>
+                        <button type="submit" class="delete btn ms-3" (click)="deleteBlog(obj._id)">
+                            Delete
+                        </button>
+                    </td>
+                  </tr>
+                
+                </tbody>
+              </table>
+           </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="updateBlog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="updateBlogLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateBlogLabel">Update blog</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="row g-3 needs-validation" [formGroup]="formsData"  (ngSubmit)="addNewBlog()" novalidate>
+          <div class="col-md-4">
+            <label for="authorName" class="form-label">Writer Name</label>
+            <input type="text" class="form-control" id="authorName" formControlName="blog_author" value="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date" value="" formControlName="blog_date" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          
+          
+          <div class="col-md-4">
+            <label for="category" class="form-label">Category</label>
+            <input type="text" class="form-control" id="category" formControlName="blog_category" required>
+            <div class="invalid-feedback">
+              Please provide a category.
+            </div>
+          </div>
+          <div class="col-md-12">
+              <label for="title" class="form-label">Blog Title</label>
+              <input type="text" class="form-control" id="title" formControlName="blog_name" required>
+              <div class="invalid-feedback">
+                Please provide a category.
+              </div>
+            </div>
+        
+          <div class="col-md-6">
+            <label for="discription" class="form-label">Blog Discription</label>
+          
+            <textarea name="" id="" cols="30" rows="10" class="form-control" id="discription" formControlName="blog_disc" required></textarea>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+              <div></div>
+
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="blog_img" class="form-label">Blog Image</label>
+            <div class="form-control">
+              <input type="file" name="blog_img" (change)="onFileSelected($event)"  id="blogimg" class="blog-img" formControlName="blog_img">
+             <br>
+             
+              <img  [src]="url" height="190px" width="auto" alt="">
+             
+               <div class="invalid-feedback">
+                Please provide a valid zip.
+              </div>
+            </div>
+
+           
+          </div>
+          
+          <div class="col-12 text-center">
+            <button class="btn btn-submit" type="submit" (click)="onUpdateBlog()">Submit form</button>
+          </div>
+        </form>
+
+      </div>
+      
+    </div>
+  </div>
+</div> -->

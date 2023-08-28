@@ -1,0 +1,76 @@
+<section>
+    <div class="container">
+        <div class="sec-titile">
+            <h1>Write Blog</h1>
+            <div class="bm-br"></div>
+           </div>
+        <form class="row g-3 needs-validation" [formGroup]="formsData"  (ngSubmit)="addNewBlog()" novalidate>
+            <div class="col-md-4">
+              <label for="authorName" class="form-label">Writer Name</label>
+              <input type="text" class="form-control" id="authorName" formControlName="blog_author" value="" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="date" class="form-label">Date</label>
+              <input type="date" class="form-control" id="date" value="" formControlName="blog_date" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            
+            
+            <div class="col-md-4">
+              <label for="category" class="form-label">Category</label>
+              <input type="text" class="form-control" id="category" formControlName="blog_category" required>
+              <div class="invalid-feedback">
+                Please provide a category.
+              </div>
+            </div>
+            <div class="col-md-12">
+                <label for="title" class="form-label">Blog Title</label>
+                <input type="text" class="form-control" id="title" formControlName="blog_name" required>
+                <div class="invalid-feedback">
+                  Please provide a category.
+                </div>
+              </div>
+          
+            <div class="col-md-6">
+              <label for="discription" class="form-label">Blog Discription</label>
+            
+              <textarea name="" id="" cols="30" rows="10" class="form-control" id="discription" formControlName="blog_disc" required></textarea>
+              <div class="invalid-feedback">
+                Please provide a valid zip.
+                <div></div>
+
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="blog_img" class="form-label">Blog Image</label>
+              <div class="form-control">
+                <input type="file" name="blog_img" (change)="onFileSelected($event)"  id="blogimg" class="blog-img" formControlName="blog_img">
+               <br>
+               
+                <img  [src]="url" height="190px" width="auto" alt="">
+               
+                 <div class="invalid-feedback">
+                  Please provide a valid zip.
+                </div>
+              </div>
+
+             
+            </div>
+            
+            <div class="col-12 text-center">
+              <button class="btn btn-submit" type="submit">Submit form</button>
+            </div>
+          </form>
+
+
+
+
+          
+    </div>
+</section>

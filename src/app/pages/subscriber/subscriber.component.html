@@ -1,0 +1,38 @@
+<section>
+    <div class="container">
+        <div class="card shadow mb-5 rounded">
+            <h2>All Subscribers</h2>
+            <p>You Can manage your subscribers from Here!</p>
+            
+        </div>
+        <div class="category-table">
+            
+           <div class="table-responsive">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let obj of newSub">
+                    <td scope="row">{{obj.sub_id}}</td>
+                    <td>{{obj.sub_name}}</td>
+                    <td>{{obj.sub_email}}</td>
+                    <td>
+                       
+                        <button type="submit" class="delete btn ms-3" (click)="subDelete(obj._id)">
+                            Delete
+                        </button>
+                    </td>
+                  </tr>
+                
+                </tbody>
+              </table>
+           </div>
+        </div>
+    </div>
+</section>

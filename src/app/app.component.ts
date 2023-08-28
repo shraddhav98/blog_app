@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'blog-dashboard';
+  status = false;
+  addToggle()
+  {
+    this.status = !this.status;       
+  }
 }
